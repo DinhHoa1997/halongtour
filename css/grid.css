@@ -89,6 +89,10 @@ body {
 .flex-flex-end {
     justify-content: flex-end;
 }
+.flex-flex-start
+{
+    justify-content: flex-start;
+}
 .align-center
 {
     align-items: center;
@@ -639,7 +643,7 @@ only screen and (min-width: 1400px)
 {
 .grid {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1250px;
     margin: 0 auto;
 }
 }
