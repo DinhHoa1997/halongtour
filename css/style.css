@@ -343,7 +343,7 @@ a img {
 .nav>li {
   list-style: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: normal;
   height: 65px;
   position: relative;
@@ -675,7 +675,7 @@ a img {
 }
 
 .crumb a:last-of-type {
-  color:var(--maincolor);
+font-family: var(--fontB);
   padding-left: 10px;
   
 } 
@@ -687,8 +687,7 @@ a img {
   padding: 0px;
   margin: 0px;
   color: #58595b;
-  background: #E5F1EE;
-  border: solid 1px #eee;
+
 }
 .menuleft .title{
   background: var(--subcolor);
@@ -713,7 +712,7 @@ a img {
   list-style: none;
   margin: 0px;
   padding: 0px;
-  border-bottom: solid 1px #eee;
+
 }
 
 .menuleft li:last-child {
@@ -726,9 +725,10 @@ a img {
 
 .menuleft li a {
   color: #0a0a0a;
-  padding: 10px;
+
   width: 100%;
   display: block;
+  padding: 5px 0px;
   font-size: 15px;
  font-family: var(--fontmain);
 
@@ -887,11 +887,11 @@ position:relative;
 
 }
 
-
 .tab-bar {
   /* background: #e1e1e1; */
   position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -905,33 +905,36 @@ position:relative;
   font-size: 16px;
   color: #484848;
   text-transform: uppercase;
-  padding: 10px 0 26px;
+  padding:10px 20px;
   display: block;
   float: left;
+  margin-right: 2px;
+  border: 1px solid #d0d0d0;
+  border-bottom: none;
 }
-
-.tab-title:nth-child(2) {
-  padding: 10px 40px 26px;
+.tab-content
+{
+  border: 1px solid #f0d0d0;
+  padding: 20px;
 }
-
-
 
 .tab-active {
   position: relative;
-  color: #ffa200;
-}
+ background-color: #f1f2f2;
+ border-top: 1px solid var(--maincolor);
+} 
 
-.tab-active::after {
+ .tab-active::after {
   content: "";
   position: absolute;
   width: 100%;
-  bottom: 0;
-  background-color: #ffa200;
-  border: solid 1px #ffa200;
+  bottom: -1px;
+  height: 1px;
+  background: #FFF;
   left: 0;
-}
+} 
 
-.tab-bar::before {
+/* .tab-bar::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -939,7 +942,7 @@ position:relative;
   background-color: #176078;
   border: solid 1px #176078;
 
-}
+} */
 #tabs-nav
 {
   display: flex;
@@ -982,11 +985,11 @@ position:relative;
 }
 .modal-overlay {
   opacity: 0;
-  filter: alpha(opacity=0);
+ 
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 900;
+  z-index: 112;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6) !important;
@@ -994,17 +997,37 @@ position:relative;
 .modal-box {
   display: none;
   position: fixed;
-  z-index: 1404040;
-  width: 60%;
+  z-index: 113;
+  width: 100%;
   border-bottom: 1px solid #aaa;
   border-radius: 4px;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-clip: padding-box;
-  max-width: 1100px;
+  max-width: 1000px;
   background: #fff;
+  height: 100%;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, 0px);
 }
+.modal-body
+{
+  padding: 10px 20px;
+  /* position: absolute; */
 
+  /* width: 60%;
+  height: 100%;
+  z-index: 1111;
+  background: #FFF;
+  display: none;
+  min-width: 400px;
+  min-height: 400px;
+  top: 0px;
+  left: 50%;
+
+  transform: translate(-50%); */
+}
 .modal-box header,
 .modal-box .modal-header {
   padding: 1.25em 1.5px;
@@ -1033,10 +1056,10 @@ position:relative;
 
 a.close {
   line-height: 1;
-  font-size: 1.5px;
+  font-size: 25px;
   position: absolute;
-  top: 5%;
-  right: 2%;
+  top: 15px;
+  right: 15px;
   text-decoration: none;
   color: #bbb;
 }
@@ -1159,10 +1182,10 @@ a.close:hover {
     font-size: 18px;
     
     display: inline-block;
-    min-width: 50px;
-    height: 50px;
+    min-width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
     border-radius: 50%;
     background-color: #FFF;
     margin: 0 5px;
@@ -1177,10 +1200,10 @@ a.close:hover {
     font-size: 18px;
     
     display: inline-block;
-    min-width: 50px;
-    height: 50px;
+    min-width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
     border-radius: 50%;
     background-color:var(--maincolor);
     margin: 0 5px;
@@ -1265,7 +1288,7 @@ a.close:hover {
 
 
 ::placeholder {
-  color: #f1f2f2;
+  color: #9d9d9d;
   opacity: 1;
   /* Firefox */
 }
@@ -1411,6 +1434,10 @@ font-size: 18px;
     text-align: center;
 
   }
+  .slidehome-intro
+  {
+    font-size: 16px;
+  }
   .slidehome-item
   {
     display: flex;
@@ -1425,7 +1452,7 @@ font-size: 18px;
   }
   .slidehome-box
   {
-    width: calc(100% - 7  0px);
+    width: calc(100% - 70px);
   }
   .slidehomeitem-title
   {
@@ -1589,7 +1616,7 @@ max-width: 200px;
 
  
   .homecat-title{
-	font-size: 45px;
+	font-size: 40px;
 	text-transform: uppercase;
   font-family: var(--fontB);
 	text-align: left;
@@ -1616,12 +1643,12 @@ font-family: var(--fontB);
   .pagecat-title{
     text-align: left;
     color: #282828;
-   font-family: var(--fontmain);
+   font-family: var(--fontB);
 
 
     position: relative;
-    font-size: 35px;
-    text-transform: uppercase;
+    font-size: 24px;
+
     margin: 0px;
     line-height: 1.3;
   }
@@ -1684,13 +1711,17 @@ font-family: var(--fontB);
     display: flex;
     align-items: center;
     color: #FFF;
-    font-size: 18px;
+    font-size: 16px;
     /* margin-bottom: 10px; */
     line-height: 2;
 }
 .footer-block .info i
 {
   margin-right: 10px;
+}
+.footer-trip a
+{
+ margin-right: 15px;
 }
 .footer-social
 {
@@ -1700,33 +1731,28 @@ font-family: var(--fontB);
 
 }
 .footer-social li{
-  width: 40px;
-  height: 40px;
   border-radius: 50%;
   text-align: center;
-  border: 1px solid #FFF;
   line-height: 40px;
   margin: 10px;
+ 
 }
-.menuboxfooter
+.menuboxfooter, .menufooter
 {
   padding: 0px;
   list-style-type: none;
-  font-size:20px
 }
-.menuboxfooter li{
-  margin-bottom: 5px;
+.menuboxfooter li,  .menufooter li{
+  margin-bottom: 15px;
+  font-size: 16px;
 }
-.menuboxfooter a{
-  color: #FFF;
-  transition: all .5s ease-in;
-}
+
 .footer-title {
-  font-size: 17px;
+  font-size: 20px;
   color: #FFF;
-  font-family: var(--fontmain);;
+  
   padding-bottom: 10px;
-  text-transform: uppercase;
+  font-family: var(--fontB);
 }
 .menuboxfooter a:hover{
   color: var(--subcolor);
@@ -1767,14 +1793,30 @@ background-size: auto;
 .img-poster img {
   display: block;
 }
-.poster-content {
+.img-poster .crumb{
   position: absolute;
   width: 100%;
   height: auto;
   left: 50%;
+  bottom: 70px;
+  text-align: left;
+  transform: translate(-50%, 0px);
+  background-color: transparent;
+}
+.img-poster .crumb a, .img-poster .crumb i{
+  color: #FFF;
+}
+.poster-content {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  left: 50%;
   top: 50%;
-  transform: translate(-50%, -20%);
+  transform: translate(-50%, -30%);
   text-align: center;
+  color: #FFF;
+  z-index: 111;
+
 }
 .frm-contact input{
 	width:100%;
@@ -1858,15 +1900,15 @@ background-size: auto;
   z-index: 1;
   position: relative;
   background: #ff000000;
-  margin-top: -150px;
+  margin-top: -100px;
 }
 .ux-shape-divider svg {
   display: block;
-  height: 150px;
+  height: 100px;
   /* left: 50%; */
   position: relative;
   /* transform: translateX(-50%); */
-  height: 150px;
+  height: 100px;
   width: 100%;
   --divider-width: 100%;
   background-color: transparent;
@@ -2058,16 +2100,22 @@ opacity: 1;
 .hometourstyle-wrapper .homecat-title{
   color: #FFF;
 }
+.hometourstyle
+{
+  position: relative;
+}
 .title-small
 {
   font-family: var(--fontB);
 }
 .hometourstyle-item, 
+.visittour-item, 
 .hometourduration-item
 {
   position: relative;
 }
 .hometourstyle-item::before,
+.visittour-item::before,
 .hometourduration-item::before{
   width: 100%;
   content: "";
@@ -2079,6 +2127,7 @@ opacity: 1;
   z-index: 1;
 }
 .hometourstyle-name,
+.visittour-name,
 .hometourduration-name
 {
   position: absolute;
@@ -2092,6 +2141,7 @@ opacity: 1;
   z-index: 2;
 }
 .hometourstyle-image,
+.visittour-image,
 .hometourduration-image
 {
   width: 100%;
@@ -2100,6 +2150,7 @@ opacity: 1;
   overflow: hidden;
 }
 .hometourstyle-image img,
+.visittour-image img,
 .hometourduration-image img
 {
   width: 100%;
@@ -2109,6 +2160,7 @@ opacity: 1;
   border-radius: 5px;
 }
 .hometourstyle-item:hover img,
+.visittour-item:hover img,
 .hometourduration-item:hover img
 {
   transform: scale(1.05);
@@ -2270,4 +2322,506 @@ opacity: 1;
 .ui-shap-tourstyle_end
 {
   margin-top: 0px;
+}
+.homenews-item
+{
+  border: 1px solid #f1f2f2;
+  background-color: #FFF;
+}
+.homenews-name
+{
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  font-family: var(--fontB);
+}
+.filter-tour
+{
+  position: absolute;
+  left: 0px;
+  bottom: 40px;
+  z-index: 11;
+  width: 100%;
+  color: #FFF;
+  font-size: 20px;
+  font-family: var(--fontB);
+}
+.modal-filter.modal-box {
+  left: 0px;
+  transform: translate(0px);
+  max-width: 300px;
+  border-radius: 0px;
+  height: 100%;
+  overflow-y: auto;
+
+}
+.title-filter {
+  padding: 10px 0px;
+  
+  font-family: var(--fontB);
+}
+.checkbox-item {
+
+  margin-bottom: 10px;
+}
+.checkbox-item label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input {
+  outline: none;
+}
+.checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  border-radius: 4px;
+  border: 2px solid #919191;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+input[type="checkbox"]:checked + .checkbox::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 40%;
+  width: 5px;
+  height: 12px;
+  border: solid #FFF;
+  border-width: 0 2px 2px 0;
+  transform: rotateZ(45deg);
+  animation: check .4s ease forwards;
+}
+input[type="checkbox"]:checked + .checkbox {
+  border-color: #FFF;
+  background-color: var(--maincolor);
+}
+
+.tourintro {
+  float: left;
+
+}
+.tourintro .tourintro-full {
+  height: 120px;
+  overflow: hidden;
+}
+.tourintro .tourintro-full h1 {
+  font-size: 1.4em;
+  color: #466caf;
+}
+.tourintro #readmore {
+  width: 100px;
+  margin: auto;
+  font-family: va;
+  font-family: var(--fontB);
+  color: var(--maincolor);
+}
+.tourintro #readmore:after {
+  content: "\f0d7";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  padding-left: 10px;
+}
+#readmore.colapse::after {
+  content: "\f0d8";
+  padding-top: 3px;
+}
+.tourintro #readmore:hover {
+ 
+}
+.price-tour span
+{
+  font-size: 30px;
+  font-family: var(--fontB);
+}
+.poster-tour::before{
+position: absolute;
+content: "";
+width: 100%;
+height: 100%;
+left: 0px;
+background-color: #000;
+opacity: .2;
+top: 0px;
+}
+.tour-name
+{
+  font-family: var(--fontB);
+  font-size: 30px;
+}
+.tour-info
+{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.tour-info li{
+  width: 120px;
+}
+.tour-info i{
+  font-size: 30px;
+}
+.btn-booktour a
+{
+  padding: 10px 35px;
+  color: #FFF;
+  font-family: var(--fontB);
+  border-radius: 20px;
+  background-color: var(--maincolor);
+  border: 1px solid var(--maincolor);
+  transition: all .5s ease;
+}
+.btn-booktour a:hover{
+  background-color: #FFF;
+  color: var(--maincolor);
+  
+}
+.box-padleft
+{
+  padding-left: 30px;
+}
+.info-tour ul{
+  list-style: none;
+  
+}
+.info-tour li::before
+{
+  content: "\f058";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  padding-right: 5px;
+  color: var(--maincolor);
+}
+.info-tour li{
+  position: relative;
+  margin-bottom: 10px;
+}
+.slider-infotour img{
+  max-height: 500px;
+}
+.infotour-button-prev
+{
+  background-color: #00000063;
+  left: 2px;
+
+
+}
+.infotour-button-next{
+  background-color: #00000063;
+  right: 2px;
+}
+.slide-infotour
+{
+  position: relative;
+}
+.swiper-pagination-bullet {
+  border: 1px solid var(--maincolor)!important;
+  background: transparent;
+  opacity: 1;
+  width: 10px!important;
+  height: 10px!important;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active
+{
+  background-color: #FFF;
+}
+.visittour-wrapper
+{
+  background-color: var(--maincolor);
+  color: #FFF;
+}
+.text-upper 
+{
+  text-transform: uppercase;
+}
+.visittour-wrapper .pagecat-title{
+  color: #FFF;
+}
+.visittour-name
+{
+  text-transform: inherit;
+  font-family: var(--fontmain);
+  text-align: center;
+}
+.faq-item {
+  color: #333;
+ 
+  border-color: #ddd;
+  padding: 5px 15px;
+  border-top: 1px solid #ddd;
+}
+.faq-active .name-faq {
+  color: var(--maincolor);
+}
+.name-faq {
+  text-decoration: none;
+
+  font-family: var(--fontB);
+  font-weight: normal;
+  padding-left: 25px;
+  display: block;
+  position: relative;
+  font-size: 16px;
+}
+.name-faq::before {
+  content: "+";
+  font-weight: bold;
+  font-size: 21px;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  transition: ease .5s;
+}
+.faqcontent {
+  display: none;
+  padding: 10px 30px;
+  background-color: #FFF;
+
+}
+.faq-active .name-faq::before {
+  content: "-";
+  transition: ease .5s;
+}
+.faq-active {
+  border-top: 1px solid var(--maincolor);
+  background: #ddd;
+}
+.itinerary-note
+{
+  padding: 10px 15px;
+  background-color: #ededed;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.tabtour .tab-bar{
+  align-items: center;
+  justify-content: center;
+}
+.tourservice ul,  
+.whyus_dttour ul{
+  padding-left: 10px;
+  list-style: none;
+  
+}
+.tourservice ul li,  
+.whyus_dttour ul li{
+  margin-bottom: 10px;
+}
+.tab-inclusion li::before,  .whyus_dttour li::before
+{
+  content: "\f058";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  padding-right: 5px;
+  color: var(--maincolor);
+}
+.tabtour p,
+.tabtour i,
+.tabtour ul
+{
+  margin-bottom: 10px;
+}
+.tabtour h4
+{
+  font-size: 18px;
+}
+.tab-exclusion li::before
+{
+  content: "\f057";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  padding-right: 5px;
+  color: var(--maincolor);
+}
+.inquiretour
+{
+  padding: 30px;
+  background-color: #f1f2f2;
+}
+
+.line-form input, 
+.line-form textarea, 
+.line-form select
+{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #9d9d9d;
+  margin-bottom: 20px;
+  font-family: var(--fontmain);
+  outline: none;
+  border-radius: 5px;
+}
+
+select {
+  color: #9d9d9d;
+}
+
+option {
+  color: var(--textcolor);
+}
+
+option[default] {
+   display: none;
+}
+.radio-form
+{
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.radio-form input{
+  width: 40px;
+  margin: 0px;
+}
+.title-input
+{
+  margin-bottom: 10px;
+}
+.btn-send{
+  background-color: var(--maincolor);
+  padding: 10px 25px;
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: var(--fontB);
+  outline: none;
+  border: 1px solid var(--maincolor);
+  border-radius: 5px;
+  transition: all .5s ease-in;
+}
+.btn-send:hover{
+  color: var(--maincolor);
+  background-color: #FFF;
+}
+/* .tourreview .tripreview-item
+{
+  margin-bottom: 30px;
+} */
+ .dttourleft
+ {
+  padding: 15px 0px;
+  background: #f2f2f2;
+ }
+ .dttourleft-title
+ {
+  padding: 0px 10px;
+ }
+ .dttourleft-title span{
+  font-size: 20px;
+ }
+ .dttourleft table{
+  text-align: center;
+  width: 100%;
+ }
+ .dttourleft th:nth-child(1), 
+ .dttourleft td:nth-child(1)
+ {
+  width: 40%;
+ }
+ .dttourleft th:nth-child(2), 
+ .dttourleft td:nth-child(2)
+ {
+  width: 60%;
+ }
+ .dttourleft th
+ {
+  border: none;
+  padding: 10px;
+  color: #FFF;
+  text-transform: uppercase;
+  background-color: var(--maincolor);
+ }
+ .dttourleft td
+ {
+  font-family: var(--fontB);
+  padding: 10px;
+ }
+ .dttourleft tr{
+  border-bottom: 1px solid #9d9d9d;
+ }
+ .btn-tour-price
+ {
+  color: var(--maincolor);
+ }
+ .whyus_dttour
+ {
+  background: #F1f2f2f2;
+  padding: 0px 15px;
+ }
+ 
+.whyus_dttour .pagecat-title{
+  font-size: 18px;
+}
+.count-number
+{
+  font-size: 60px;
+  color: #000;
+  padding-bottom: 20px;
+  font-family: var(--fontB);
+}
+.infonumber-item 
+{
+  padding: 10px;
+  border-right: 1px solid #d8d8d8;
+}
+.infonumber-item:nth-last-child(1)
+{
+  border: none;
+}
+.info_offer-wrapper
+{
+  color: #fff;
+  background-color: var(--maincolor);
+}
+.btn-plan a, 
+.btn-viewall a:hover
+{
+  padding: 10px 25px;
+  border-radius: 25px;
+  color: #333;
+  margin-right: 20px;
+  font-family: var(--fontB);
+  text-transform: uppercase;
+  border: 1px solid #FFF;
+  background-color: #FFF;
+  transition: all .5s ease-in-out;
+}
+.btn-viewall a,
+ .btn-plan a:hover 
+{
+  padding: 10px 25px;
+  border-radius: 25px;
+  color: #FFF;
+  background-color: var(--maincolor);
+  margin-right: 20px;
+  font-family: var(--fontB);
+  text-transform: uppercase;
+  border: 1px solid #FFF;
+  transition: all .5s ease-in-out;
+  
+}
+.infoleader-img img{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+.infoleader-item
+{
+  text-align: center;
+ 
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.infoleader-name
+{
+  font-size: 18px;
+  font-family: var(--fontB);
 }
